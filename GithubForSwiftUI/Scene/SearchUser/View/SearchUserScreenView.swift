@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchUserScreenView: View {
-    @StateObject var interactor: SearchUserInteractor
+    @StateObject var interactor: SearchUserInteractor<SearchUserRepositoryImpl>
     
     var body: some View {
         NavigationView {
@@ -31,7 +31,7 @@ struct SearchUserScreenView: View {
 #if DEBUG
 struct SearchUserScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchUserScreenView(interactor: .init())
+        SearchUserScreenView(interactor: .init(repository: SearchUserRepositoryImpl()))
     }
 }
 #endif

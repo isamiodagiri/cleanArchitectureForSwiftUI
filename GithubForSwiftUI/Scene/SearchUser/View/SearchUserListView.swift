@@ -20,6 +20,7 @@ extension SearchUserScreenView {
                             NavigationLink {
                                 UserDetailScreenView(
                                     interactor: .init(
+                                        repository: UserDetailRepositoryImpl(),
                                         state: .init(userName: item.name)
                                     )
                                 )

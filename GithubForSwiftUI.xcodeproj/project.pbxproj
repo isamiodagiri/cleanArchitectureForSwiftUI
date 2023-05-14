@@ -10,6 +10,8 @@
 		5700BDA02A0EF99D0084D6E7 /* UserDetailContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700BD9F2A0EF99D0084D6E7 /* UserDetailContentsView.swift */; };
 		5700BDA22A0EF9AB0084D6E7 /* UserDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700BDA12A0EF9AB0084D6E7 /* UserDetailHeaderView.swift */; };
 		5700BDA42A0EF9B90084D6E7 /* UserDetailRepositoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700BDA32A0EF9B90084D6E7 /* UserDetailRepositoryListView.swift */; };
+		571BFD062A10715500557CEA /* SearchUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571BFD052A10715500557CEA /* SearchUserRepository.swift */; };
+		571BFD082A10716400557CEA /* UserDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571BFD072A10716400557CEA /* UserDetailRepository.swift */; };
 		57B8F6862A07023A00C00B8E /* GithubForSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B8F6852A07023A00C00B8E /* GithubForSwiftUIApp.swift */; };
 		57B8F6882A07023A00C00B8E /* SearchUserScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B8F6872A07023A00C00B8E /* SearchUserScreenView.swift */; };
 		57B8F68A2A07023B00C00B8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B8F6892A07023B00C00B8E /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 		5700BD9F2A0EF99D0084D6E7 /* UserDetailContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailContentsView.swift; sourceTree = "<group>"; };
 		5700BDA12A0EF9AB0084D6E7 /* UserDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailHeaderView.swift; sourceTree = "<group>"; };
 		5700BDA32A0EF9B90084D6E7 /* UserDetailRepositoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRepositoryListView.swift; sourceTree = "<group>"; };
+		571BFD052A10715500557CEA /* SearchUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserRepository.swift; sourceTree = "<group>"; };
+		571BFD072A10716400557CEA /* UserDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRepository.swift; sourceTree = "<group>"; };
 		57B8F6822A07023A00C00B8E /* GithubForSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubForSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B8F6852A07023A00C00B8E /* GithubForSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubForSwiftUIApp.swift; sourceTree = "<group>"; };
 		57B8F6872A07023A00C00B8E /* SearchUserScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserScreenView.swift; sourceTree = "<group>"; };
@@ -251,6 +255,7 @@
 			children = (
 				57B8F6C92A07431300C00B8E /* View */,
 				57B8F6C12A070E1B00C00B8E /* SearchUserInteractor.swift */,
+				571BFD052A10715500557CEA /* SearchUserRepository.swift */,
 				57B8F6C72A07176F00C00B8E /* SearchUserState.swift */,
 			);
 			path = SearchUser;
@@ -271,6 +276,7 @@
 				5700BD9E2A0EF9940084D6E7 /* View */,
 				57B8F6D72A07B8F100C00B8E /* UserDetailInteractor.swift */,
 				57B8F6D92A07BBF000C00B8E /* UserDetailState.swift */,
+				571BFD072A10716400557CEA /* UserDetailRepository.swift */,
 			);
 			path = UserDetail;
 			sourceTree = "<group>";
@@ -412,6 +418,8 @@
 				57B8F6CF2A07913200C00B8E /* UserRepositoryRequest.swift in Sources */,
 				57B8F6B62A07092400C00B8E /* Request.swift in Sources */,
 				5700BDA22A0EF9AB0084D6E7 /* UserDetailHeaderView.swift in Sources */,
+				571BFD082A10716400557CEA /* UserDetailRepository.swift in Sources */,
+				571BFD062A10715500557CEA /* SearchUserRepository.swift in Sources */,
 				57B8F6D62A07B8AA00C00B8E /* UserDetailScreenView.swift in Sources */,
 				57B8F6CB2A07436200C00B8E /* SearchUserListView.swift in Sources */,
 				57B8F6882A07023A00C00B8E /* SearchUserScreenView.swift in Sources */,

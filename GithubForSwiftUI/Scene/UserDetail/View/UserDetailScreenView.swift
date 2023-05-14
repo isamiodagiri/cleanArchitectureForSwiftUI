@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserDetailScreenView: View {
-    @StateObject var interactor: UserDetailInteractor
+    @StateObject var interactor: UserDetailInteractor<UserDetailRepositoryImpl>
 
     var body: some View {
         UserDetailContentsView(state: interactor.state)
@@ -20,7 +20,7 @@ struct UserDetailScreenView: View {
 #if DEBUG
 struct UserDetailScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        UserDetailScreenView(interactor: .init(state: .init()))
+        UserDetailScreenView(interactor: .init(repository: UserDetailRepositoryImpl(), state: .init()))
     }
 }
 #endif

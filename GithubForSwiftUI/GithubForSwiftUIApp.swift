@@ -11,7 +11,7 @@ import SwiftUI
 struct GithubForSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            SearchUserScreenView(interactor: .init())
+            SearchUserScreenView(interactor: .init(repository: SearchUserRepositoryImpl()))
         }
     }
 }
