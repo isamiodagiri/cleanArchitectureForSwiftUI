@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchUserScreenView: View {
-    @StateObject var interactor: SearchUserInteractor<SearchUserRepositoryImpl>
+    var interactor: SearchUserInteractor<SearchUserRepositoryImpl>
     
     var body: some View {
         NavigationView {
@@ -18,13 +18,71 @@ struct SearchUserScreenView: View {
                 .navigationTitle("ユーザー一覧")
                 .navigationBarTitleDisplayMode(.inline)
                 .searchable(
-                    text: $interactor.state.keyWordPublished,
+                    text: Binding(get: {
+                        interactor.state.keyWord
+                    }, set: {
+                        interactor.onSearchableText($0)
+                    }),
                     placement: .navigationBarDrawer(displayMode: .always),
                     prompt: Text("キーワードを入力してください")
                 )
                 .onSubmit(of: .search, interactor.onSubmitSearch)
         }
         .onAppear(perform: interactor.onAppear)
+    }
+}
+
+
+private extension SearchUserScreenView {
+    struct SearchUserListView<State: SearchUserStateProtocol>: View {
+        @StateObject var state: State
+        
+        var body: some View {
+            switch state.items.isEmpty {
+            case false:
+                ScrollView(showsIndicators: true) {
+                    LazyVGrid(columns: [.init()], alignment: .leading, spacing: 8.0) {
+                        ForEach(state.items, id: \.id) { item in
+                            NavigationLink {
+                                UserDetailScreenView(
+                                    interactor: .init(
+                                        repository: UserDetailRepositoryImpl(),
+                                        state: .init(userName: item.name)
+                                    )
+                                )
+                            } label: {
+                                SearchUserDetailView(state: item)
+                            }
+                        }
+                    }
+                }
+            case true:
+                Text("見つかりませんでした。\n別のキーワードで検索してください。")
+            }
+        }
+    }
+    
+    struct SearchUserDetailView<State: SearchUserDetailStateProtocol>: View {
+        @StateObject var state: State
+        
+        var body: some View {
+            HStack(alignment: .center, spacing: 12.0) {
+                AsyncImage(url: state.profileImage) { image in
+                    image.resizable()
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(width: 50.0, height: 50.0)
+                
+                Text(state.name)
+                    .foregroundColor(Color.black)
+                    .font(.system(size: 24.0).bold())
+                
+                Spacer()
+            }
+            .background(Color.white)
+            .border(.gray, width: 2.0)
+        }
     }
 }
 
