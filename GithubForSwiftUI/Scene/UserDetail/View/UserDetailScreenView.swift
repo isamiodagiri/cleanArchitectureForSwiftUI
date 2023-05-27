@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserDetailScreenView: View {
-    @StateObject var interactor: UserDetailInteractor<UserDetailRepositoryImpl>
+    var interactor: UserDetailInteractor<UserDetailRepositoryImpl>
 
     var body: some View {
         UserDetailContentsView(state: interactor.state)
