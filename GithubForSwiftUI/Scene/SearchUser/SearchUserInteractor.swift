@@ -42,6 +42,7 @@ class SearchUserInteractor<Repository: SearchUserRepository> {
             let items = try await repository.fetchUserList(query: query)
             stateImpl.itemsPublished = items
         } catch {
+            // エラー処理
             print(error)
         }
     }    
