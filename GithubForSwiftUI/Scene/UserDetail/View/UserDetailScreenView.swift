@@ -19,7 +19,7 @@ struct UserDetailScreenView: View {
 
 private extension UserDetailScreenView {
     struct UserDetailContentsView<State: UserDetailStateProtocol>: View {
-        @ObservedObject var state: State
+        @StateObject var state: State
 
         var body: some View {
             ScrollView {

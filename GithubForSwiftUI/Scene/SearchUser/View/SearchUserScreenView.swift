@@ -35,7 +35,7 @@ struct SearchUserScreenView: View {
 
 private extension SearchUserScreenView {
     struct SearchUserListView<State: SearchUserStateProtocol>: View {
-        @ObservedObject var state: State
+        @StateObject var state: State
         
         var body: some View {
             switch state.items.isEmpty {
