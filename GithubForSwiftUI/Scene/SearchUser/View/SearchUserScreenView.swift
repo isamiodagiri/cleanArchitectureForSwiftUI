@@ -35,7 +35,7 @@ struct SearchUserScreenView: View {
 
 private extension SearchUserScreenView {
     struct SearchUserListView<State: SearchUserStateProtocol>: View {
-        @StateObject var state: State
+        @ObservedObject var state: State
         
         var body: some View {
             switch state.items.isEmpty {
@@ -63,7 +63,7 @@ private extension SearchUserScreenView {
     }
     
     struct SearchUserDetailView<State: SearchUserDetailStateProtocol>: View {
-        @StateObject var state: State
+        @ObservedObject var state: State
         
         var body: some View {
             HStack(alignment: .center, spacing: 12.0) {

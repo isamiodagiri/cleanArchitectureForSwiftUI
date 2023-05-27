@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5700BDA02A0EF99D0084D6E7 /* UserDetailContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700BD9F2A0EF99D0084D6E7 /* UserDetailContentsView.swift */; };
-		5700BDA22A0EF9AB0084D6E7 /* UserDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700BDA12A0EF9AB0084D6E7 /* UserDetailHeaderView.swift */; };
-		5700BDA42A0EF9B90084D6E7 /* UserDetailRepositoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700BDA32A0EF9B90084D6E7 /* UserDetailRepositoryListView.swift */; };
 		571BFD062A10715500557CEA /* SearchUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571BFD052A10715500557CEA /* SearchUserRepository.swift */; };
 		571BFD082A10716400557CEA /* UserDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571BFD072A10716400557CEA /* UserDetailRepository.swift */; };
 		57B8F6862A07023A00C00B8E /* GithubForSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B8F6852A07023A00C00B8E /* GithubForSwiftUIApp.swift */; };
@@ -55,9 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5700BD9F2A0EF99D0084D6E7 /* UserDetailContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailContentsView.swift; sourceTree = "<group>"; };
-		5700BDA12A0EF9AB0084D6E7 /* UserDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailHeaderView.swift; sourceTree = "<group>"; };
-		5700BDA32A0EF9B90084D6E7 /* UserDetailRepositoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRepositoryListView.swift; sourceTree = "<group>"; };
 		571BFD052A10715500557CEA /* SearchUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserRepository.swift; sourceTree = "<group>"; };
 		571BFD072A10716400557CEA /* UserDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRepository.swift; sourceTree = "<group>"; };
 		57B8F6822A07023A00C00B8E /* GithubForSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubForSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,9 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				57B8F6D52A07B8AA00C00B8E /* UserDetailScreenView.swift */,
-				5700BD9F2A0EF99D0084D6E7 /* UserDetailContentsView.swift */,
-				5700BDA12A0EF9AB0084D6E7 /* UserDetailHeaderView.swift */,
-				5700BDA32A0EF9B90084D6E7 /* UserDetailRepositoryListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -410,16 +401,13 @@
 			files = (
 				57B8F6D82A07B8F100C00B8E /* UserDetailInteractor.swift in Sources */,
 				57B8F6B82A0709BC00C00B8E /* SearchUsersRequest.swift in Sources */,
-				5700BDA02A0EF99D0084D6E7 /* UserDetailContentsView.swift in Sources */,
 				57B8F6B32A0702CA00C00B8E /* WebView.swift in Sources */,
 				57B8F6CF2A07913200C00B8E /* UserRepositoryRequest.swift in Sources */,
 				57B8F6B62A07092400C00B8E /* Request.swift in Sources */,
-				5700BDA22A0EF9AB0084D6E7 /* UserDetailHeaderView.swift in Sources */,
 				571BFD082A10716400557CEA /* UserDetailRepository.swift in Sources */,
 				571BFD062A10715500557CEA /* SearchUserRepository.swift in Sources */,
 				57B8F6D62A07B8AA00C00B8E /* UserDetailScreenView.swift in Sources */,
 				57B8F6882A07023A00C00B8E /* SearchUserScreenView.swift in Sources */,
-				5700BDA42A0EF9B90084D6E7 /* UserDetailRepositoryListView.swift in Sources */,
 				57B8F6CD2A07901F00C00B8E /* UserDetailRequest.swift in Sources */,
 				57B8F6862A07023A00C00B8E /* GithubForSwiftUIApp.swift in Sources */,
 				57B8F6C22A070E1B00C00B8E /* SearchUserInteractor.swift in Sources */,
