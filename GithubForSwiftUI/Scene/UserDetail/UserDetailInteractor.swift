@@ -7,15 +7,14 @@
 
 import Foundation
 
-class UserDetailInteractor<Repository: UserDetailRepository>: ObservableObject {
-    private(set) lazy var state: some UserDetailStateProtocol = {
+@MainActor
+struct UserDetailInteractor<Repository: UserDetailRepository> {
+    var state: some UserDetailStateProtocol {
         stateImpl
-    }()
+    }
 
-    private(set) lazy var onAppear: () -> Void = { [weak self] in
-        Task { [weak self] in
-            await self?.updateUI(with: self?.stateImpl.userName ?? "")
-        }
+    func onAppear() async {
+        await updateUI(with: stateImpl.userName)
     }
     
     private var repository: Repository
@@ -25,8 +24,9 @@ class UserDetailInteractor<Repository: UserDetailRepository>: ObservableObject {
         self.repository = repository
         self.stateImpl = state
     }
-    
-    @MainActor
+}
+// MARK: - Private
+extension UserDetailInteractor {
     private func updateUI(with name: String) async {
         do {
             let headerResult = try await repository.fetchUser(with: name)

@@ -13,7 +13,7 @@ protocol UserDetailStateProtocol: ObservableObject {
     var repositoryList: UserDetailRepositoryListState { get }
 }
 
-class UserDetailState: UserDetailStateProtocol {
+final class UserDetailState: UserDetailStateProtocol {
     @Published var headerPublished: UserDetailHeaderState
     @Published var repositoryListPublished: UserDetailRepositoryListState
     
@@ -40,7 +40,7 @@ protocol UserDetailHeaderStateProtocol: ObservableObject {
     var following: Int { get }
 }
 
-class UserDetailHeaderState: UserDetailHeaderStateProtocol {
+final class UserDetailHeaderState: UserDetailHeaderStateProtocol {
     @Published var idPublished: String
     @Published var namePublished: String
     @Published var profileImagePublished: URL?
@@ -76,7 +76,7 @@ protocol UserDetailRepositoryListStateProtocol: ObservableObject {
     var items: [UserDetailRepositoryDetailState] { get }
 }
 
-class UserDetailRepositoryListState: UserDetailRepositoryListStateProtocol {
+final class UserDetailRepositoryListState: UserDetailRepositoryListStateProtocol {
     @Published var itemsPublished: [UserDetailRepositoryDetailState]
     
     var items: [UserDetailRepositoryDetailState] {
@@ -97,7 +97,7 @@ protocol UserDetailRepositoryDetailStateProtocol: ObservableObject {
     var fork: Bool { get }
 }
 
-class UserDetailRepositoryDetailState: UserDetailRepositoryDetailStateProtocol {
+final class UserDetailRepositoryDetailState: UserDetailRepositoryDetailStateProtocol {
     @Published var idPublished: String
     @Published var namePublished: String
     @Published var fullNamePublished: String

@@ -12,7 +12,7 @@ protocol SearchUserStateProtocol: ObservableObject {
     var items: [SearchUserDetailState] { get }
 }
 
-class SearchUserState: SearchUserStateProtocol {
+final class SearchUserState: SearchUserStateProtocol {
     @Published var keyWordPublished: String
     @Published var itemsPublished: [SearchUserDetailState]
 
@@ -36,7 +36,7 @@ protocol SearchUserDetailStateProtocol: ObservableObject {
     var profileImage: URL? { get }
 }
 
-class SearchUserDetailState: SearchUserDetailStateProtocol {
+final class SearchUserDetailState: SearchUserDetailStateProtocol {
     @Published var idPublished: String
     @Published var namePublished: String
     @Published var profileImagePublished: URL?

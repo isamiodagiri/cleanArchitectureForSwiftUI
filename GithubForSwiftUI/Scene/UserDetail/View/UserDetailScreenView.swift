@@ -13,12 +13,12 @@ struct UserDetailScreenView: View {
     var body: some View {
         UserDetailContentsView(state: interactor.state)
             .navigationTitle("ユーザー詳細")
-            .onAppear(perform: interactor.onAppear)
+            .onAppear(perform: onAppear)
     }
 }
-
-private extension UserDetailScreenView {
-    struct UserDetailContentsView<State: UserDetailStateProtocol>: View {
+// MARK: - View
+extension UserDetailScreenView {
+    private struct UserDetailContentsView<State: UserDetailStateProtocol>: View {
         @StateObject var state: State
 
         var body: some View {
@@ -32,7 +32,7 @@ private extension UserDetailScreenView {
         }
     }
     
-    struct UserDetailHeaderView<State: UserDetailHeaderStateProtocol>: View {
+    private struct UserDetailHeaderView<State: UserDetailHeaderStateProtocol>: View {
         @ObservedObject var state: State
 
         var body: some View {
@@ -68,7 +68,7 @@ private extension UserDetailScreenView {
         }
     }
     
-    struct UserDetailRepositoryListView<State: UserDetailRepositoryListStateProtocol>: View {
+    private struct UserDetailRepositoryListView<State: UserDetailRepositoryListStateProtocol>: View {
         @ObservedObject var state: State
         
         var body: some View {
@@ -89,7 +89,7 @@ private extension UserDetailScreenView {
         }
     }
     
-    struct UserDetailRepositoryDetailView<State: UserDetailRepositoryDetailStateProtocol>: View {
+    private struct UserDetailRepositoryDetailView<State: UserDetailRepositoryDetailStateProtocol>: View {
         @ObservedObject var state: State
         
         var body: some View {
@@ -115,6 +115,14 @@ private extension UserDetailScreenView {
             }
             .padding(.all, 8.0)
             .border(.gray, width: 2.0)
+        }
+    }
+}
+// MARK: - Method
+extension UserDetailScreenView {
+    private func onAppear() {
+        Task {
+            await interactor.onAppear()
         }
     }
 }

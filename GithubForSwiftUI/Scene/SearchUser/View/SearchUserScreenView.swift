@@ -31,7 +31,7 @@ struct SearchUserScreenView: View {
 }
 // MARK: - View
 extension SearchUserScreenView {
-    struct SearchUserListView<State: SearchUserStateProtocol>: View {
+    private struct SearchUserListView<State: SearchUserStateProtocol>: View {
         @StateObject var state: State
         
         var body: some View {
@@ -59,7 +59,7 @@ extension SearchUserScreenView {
         }
     }
     
-    struct SearchUserDetailView<State: SearchUserDetailStateProtocol>: View {
+    private struct SearchUserDetailView<State: SearchUserDetailStateProtocol>: View {
         @ObservedObject var state: State
         
         var body: some View {
@@ -84,13 +84,13 @@ extension SearchUserScreenView {
 }
 // MARK: - Method
 extension SearchUserScreenView {
-    func onAppear() {
+    private func onAppear() {
         Task {
             await interactor.onAppear()
         }
     }
     
-    func onSubmitSearch() {
+    private func onSubmitSearch() {
         Task {
             await interactor.onSubmitSearch()
         }
