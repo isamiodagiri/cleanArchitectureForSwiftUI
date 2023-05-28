@@ -32,6 +32,7 @@
 		57B8F6D62A07B8AA00C00B8E /* UserDetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B8F6D52A07B8AA00C00B8E /* UserDetailScreenView.swift */; };
 		57B8F6D82A07B8F100C00B8E /* UserDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B8F6D72A07B8F100C00B8E /* UserDetailInteractor.swift */; };
 		57B8F6DA2A07BBF000C00B8E /* UserDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B8F6D92A07BBF000C00B8E /* UserDetailState.swift */; };
+		57D1D5992A22DB7C003077E6 /* SearchUserInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1D5982A22DB7C003077E6 /* SearchUserInteractorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		57B8F6D52A07B8AA00C00B8E /* UserDetailScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailScreenView.swift; sourceTree = "<group>"; };
 		57B8F6D72A07B8F100C00B8E /* UserDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailInteractor.swift; sourceTree = "<group>"; };
 		57B8F6D92A07BBF000C00B8E /* UserDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailState.swift; sourceTree = "<group>"; };
+		57D1D5982A22DB7C003077E6 /* SearchUserInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserInteractorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				57B8F6962A07023C00C00B8E /* GithubForSwiftUITests.swift */,
+				57D1D5982A22DB7C003077E6 /* SearchUserInteractorTests.swift */,
 			);
 			path = GithubForSwiftUITests;
 			sourceTree = "<group>";
@@ -285,6 +288,8 @@
 			dependencies = (
 			);
 			name = GithubForSwiftUI;
+			packageProductDependencies = (
+			);
 			productName = GithubForSwiftUI;
 			productReference = 57B8F6822A07023A00C00B8E /* GithubForSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -357,6 +362,8 @@
 				Base,
 			);
 			mainGroup = 57B8F6792A07023A00C00B8E;
+			packageReferences = (
+			);
 			productRefGroup = 57B8F6832A07023A00C00B8E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -427,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57B8F6972A07023C00C00B8E /* GithubForSwiftUITests.swift in Sources */,
+				57D1D5992A22DB7C003077E6 /* SearchUserInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
