@@ -7,25 +7,22 @@
 
 import Foundation
 
-class SearchUserInteractor<Repository: SearchUserRepository> {
-    private(set) lazy var state: some SearchUserStateProtocol = {
+@MainActor
+struct SearchUserInteractor<Repository: SearchUserRepository> {
+    var state: some SearchUserStateProtocol {
         stateImpl
-    }()
-    
-    private(set) lazy var onAppear: () -> Void = { [weak self] in
-        Task { [weak self] in
-            await self?.updateUI()
-        }
     }
     
-    private(set) lazy var onSubmitSearch: () -> Void = { [weak self] in
-        Task { [weak self] in
-            await self?.updateUI(query: self?.stateImpl.keyWordPublished ?? "")
-        }
+    func onAppear() async {
+        await updateUI()
     }
     
-    private(set) lazy var onSearchableText: (String) -> Void = { [weak self] in
-        self?.stateImpl.keyWordPublished = $0
+    func onSubmitSearch() async {
+        await updateUI(query: stateImpl.keyWordPublished)
+    }
+    
+    func onSearchableText(_ keyWord: String) {
+        stateImpl.keyWordPublished = keyWord
     }
     
     private var repository: Repository
@@ -35,8 +32,9 @@ class SearchUserInteractor<Repository: SearchUserRepository> {
         self.repository = repository
         self.stateImpl = state
     }
-    
-    @MainActor
+}
+// MARK: - Private
+extension SearchUserInteractor {
     private func updateUI(query: String = "swift") async {
         do {
             let items = try await repository.fetchUserList(query: query)
@@ -45,5 +43,5 @@ class SearchUserInteractor<Repository: SearchUserRepository> {
             // エラー処理
             print(error)
         }
-    }    
+    }
 }

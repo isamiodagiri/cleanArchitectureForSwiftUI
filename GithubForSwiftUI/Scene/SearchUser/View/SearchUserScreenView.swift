@@ -18,22 +18,19 @@ struct SearchUserScreenView: View {
                 .navigationTitle("ユーザー一覧")
                 .navigationBarTitleDisplayMode(.inline)
                 .searchable(
-                    text: Binding(get: {
-                        interactor.state.keyWord
-                    }, set: {
-                        interactor.onSearchableText($0)
-                    }),
+                    text: .init(
+                        get: { interactor.state.keyWord },
+                        set: { interactor.onSearchableText($0) }),
                     placement: .navigationBarDrawer(displayMode: .always),
                     prompt: Text("キーワードを入力してください")
                 )
-                .onSubmit(of: .search, interactor.onSubmitSearch)
+                .onSubmit(of: .search, onSubmitSearch)
         }
-        .onAppear(perform: interactor.onAppear)
+        .onAppear(perform: onAppear)
     }
 }
-
-
-private extension SearchUserScreenView {
+// MARK: - View
+extension SearchUserScreenView {
     struct SearchUserListView<State: SearchUserStateProtocol>: View {
         @StateObject var state: State
         
@@ -82,6 +79,20 @@ private extension SearchUserScreenView {
             }
             .background(Color.white)
             .border(.gray, width: 2.0)
+        }
+    }
+}
+// MARK: - Method
+extension SearchUserScreenView {
+    func onAppear() {
+        Task {
+            await interactor.onAppear()
+        }
+    }
+    
+    func onSubmitSearch() {
+        Task {
+            await interactor.onSubmitSearch()
         }
     }
 }
