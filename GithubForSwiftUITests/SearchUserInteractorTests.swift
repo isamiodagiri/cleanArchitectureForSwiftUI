@@ -10,16 +10,23 @@ import XCTest
 
 final class SearchUserInteractorTests: XCTestCase {
     
-    var interactor: SearchUserInteractor<SearchUserRepositoryImpl>!
+    var interactor: SearchUserInteractor<SearchUserRepositoryMock>!
+    let repository: SearchUserRepositoryMock = .init()
     
     @MainActor
     override func setUp() async throws {
-        interactor = .init(repository: SearchUserRepositoryImpl())
+        interactor = .init(repository: repository)
     }
 
     @MainActor
     func test_OnAppear() async throws {
+        repository.fetchUserListHandler = { _ in
+            [.init()]
+        }
+        
         await interactor.onAppear()
-        XCTAssertTrue(interactor.state.items.count > 0)
+        
+        XCTAssertEqual(repository.fetchUserListCallCount, 1)
+        XCTAssertEqual(interactor.state.items.count, 1)
     }
 }

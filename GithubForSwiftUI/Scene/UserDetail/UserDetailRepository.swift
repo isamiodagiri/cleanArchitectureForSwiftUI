@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/// @mockable
 protocol UserDetailRepository {
     func fetchUser(with name: String) async throws -> UserDetailHeaderState
     func fetchRepository(with name: String) async throws -> UserDetailRepositoryListState

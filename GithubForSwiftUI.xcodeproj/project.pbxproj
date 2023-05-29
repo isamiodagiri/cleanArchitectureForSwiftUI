@@ -33,6 +33,7 @@
 		57B8F6D82A07B8F100C00B8E /* UserDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B8F6D72A07B8F100C00B8E /* UserDetailInteractor.swift */; };
 		57B8F6DA2A07BBF000C00B8E /* UserDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B8F6D92A07BBF000C00B8E /* UserDetailState.swift */; };
 		57D1D5992A22DB7C003077E6 /* SearchUserInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1D5982A22DB7C003077E6 /* SearchUserInteractorTests.swift */; };
+		57D1D5A22A24AB75003077E6 /* MockResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1D5A12A24AB75003077E6 /* MockResults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		57B8F6D72A07B8F100C00B8E /* UserDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailInteractor.swift; sourceTree = "<group>"; };
 		57B8F6D92A07BBF000C00B8E /* UserDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailState.swift; sourceTree = "<group>"; };
 		57D1D5982A22DB7C003077E6 /* SearchUserInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserInteractorTests.swift; sourceTree = "<group>"; };
+		57D1D59F2A232420003077E6 /* BuildTools */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BuildTools; sourceTree = "<group>"; };
+		57D1D5A12A24AB75003077E6 /* MockResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockResults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,7 @@
 		57B8F6792A07023A00C00B8E = {
 			isa = PBXGroup;
 			children = (
+				57D1D59F2A232420003077E6 /* BuildTools */,
 				57B8F6842A07023A00C00B8E /* GithubForSwiftUI */,
 				57B8F6952A07023C00C00B8E /* GithubForSwiftUITests */,
 				57B8F69F2A07023C00C00B8E /* GithubForSwiftUIUITests */,
@@ -140,6 +144,7 @@
 		57B8F6842A07023A00C00B8E /* GithubForSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				57D1D5A12A24AB75003077E6 /* MockResults.swift */,
 				57B8F6B42A0707CF00C00B8E /* API */,
 				57B8F6B02A0702A300C00B8E /* Core */,
 				57B8F6AF2A07029500C00B8E /* Scene */,
@@ -411,6 +416,7 @@
 				57B8F6B32A0702CA00C00B8E /* WebView.swift in Sources */,
 				57B8F6CF2A07913200C00B8E /* UserRepositoryRequest.swift in Sources */,
 				57B8F6B62A07092400C00B8E /* Request.swift in Sources */,
+				57D1D5A22A24AB75003077E6 /* MockResults.swift in Sources */,
 				571BFD082A10716400557CEA /* UserDetailRepository.swift in Sources */,
 				571BFD062A10715500557CEA /* SearchUserRepository.swift in Sources */,
 				57B8F6D62A07B8AA00C00B8E /* UserDetailScreenView.swift in Sources */,

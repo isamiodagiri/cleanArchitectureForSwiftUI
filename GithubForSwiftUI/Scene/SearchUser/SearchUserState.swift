@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/// @mockable
 protocol SearchUserStateProtocol: ObservableObject {
     var keyWord: String { get }
     var items: [SearchUserDetailState] { get }
@@ -29,7 +29,7 @@ final class SearchUserState: SearchUserStateProtocol {
         itemsPublished = items
     }
 }
-
+/// @mockable
 protocol SearchUserDetailStateProtocol: ObservableObject {
     var id: String { get }
     var name: String { get }

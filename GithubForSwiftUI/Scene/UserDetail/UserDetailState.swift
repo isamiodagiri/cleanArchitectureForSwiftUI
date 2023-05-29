@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/// @mockable
 protocol UserDetailStateProtocol: ObservableObject {
     var userName: String { get }
     var header: UserDetailHeaderState { get }
@@ -31,7 +31,7 @@ final class UserDetailState: UserDetailStateProtocol {
         repositoryListPublished = repositoryList
     }
 }
-
+/// @mockable
 protocol UserDetailHeaderStateProtocol: ObservableObject {
     var id: String { get }
     var name: String { get }
@@ -71,7 +71,7 @@ final class UserDetailHeaderState: UserDetailHeaderStateProtocol {
         followingPublished = following
     }
 }
-
+/// @mockable
 protocol UserDetailRepositoryListStateProtocol: ObservableObject {
     var items: [UserDetailRepositoryDetailState] { get }
 }
@@ -87,7 +87,7 @@ final class UserDetailRepositoryListState: UserDetailRepositoryListStateProtocol
         itemsPublished = items
     }
 }
-
+/// @mockable
 protocol UserDetailRepositoryDetailStateProtocol: ObservableObject {
     var id: String { get }
     var name: String { get }
