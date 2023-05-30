@@ -34,6 +34,7 @@
 		57B8F6DA2A07BBF000C00B8E /* UserDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B8F6D92A07BBF000C00B8E /* UserDetailState.swift */; };
 		57D1D5992A22DB7C003077E6 /* SearchUserInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1D5982A22DB7C003077E6 /* SearchUserInteractorTests.swift */; };
 		57D1D5A22A24AB75003077E6 /* MockResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1D5A12A24AB75003077E6 /* MockResults.swift */; };
+		57D1D5A42A26A73A003077E6 /* UserDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1D5A32A26A73A003077E6 /* UserDetailInteractorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		57D1D5982A22DB7C003077E6 /* SearchUserInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserInteractorTests.swift; sourceTree = "<group>"; };
 		57D1D59F2A232420003077E6 /* BuildTools */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BuildTools; sourceTree = "<group>"; };
 		57D1D5A12A24AB75003077E6 /* MockResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockResults.swift; sourceTree = "<group>"; };
+		57D1D5A32A26A73A003077E6 /* UserDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailInteractorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			children = (
 				57B8F6962A07023C00C00B8E /* GithubForSwiftUITests.swift */,
 				57D1D5982A22DB7C003077E6 /* SearchUserInteractorTests.swift */,
+				57D1D5A32A26A73A003077E6 /* UserDetailInteractorTests.swift */,
 			);
 			path = GithubForSwiftUITests;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57B8F6972A07023C00C00B8E /* GithubForSwiftUITests.swift in Sources */,
+				57D1D5A42A26A73A003077E6 /* UserDetailInteractorTests.swift in Sources */,
 				57D1D5992A22DB7C003077E6 /* SearchUserInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,18 +8,18 @@
 import XCTest
 @testable import GithubForSwiftUI
 
+@MainActor
 final class SearchUserInteractorTests: XCTestCase {
     
     var interactor: SearchUserInteractor<SearchUserRepositoryMock>!
     let repository: SearchUserRepositoryMock = .init()
     
-    @MainActor
     override func setUp() async throws {
         interactor = .init(repository: repository)
     }
 
-    @MainActor
-    func test_OnAppear() async throws {
+    
+    func test_onAppear() async throws {
         repository.fetchUserListHandler = { _ in
             [.init()]
         }
@@ -28,5 +28,26 @@ final class SearchUserInteractorTests: XCTestCase {
         
         XCTAssertEqual(repository.fetchUserListCallCount, 1)
         XCTAssertEqual(interactor.state.items.count, 1)
+    }
+    
+    func test_onSubmitSearch() async throws {
+        repository.fetchUserListHandler = { _ in
+            [.init()]
+        }
+        
+        await interactor.onSubmitSearch()
+        
+        XCTAssertEqual(repository.fetchUserListCallCount, 1)
+        XCTAssertEqual(interactor.state.items.count, 1)
+    }
+    
+    func test_onSearchableText() async throws {
+        repository.fetchUserListHandler = { _ in
+            [.init()]
+        }
+        
+        interactor.onSearchableText("test")
+        
+        XCTAssertEqual(interactor.state.keyWord, "test")
     }
 }
